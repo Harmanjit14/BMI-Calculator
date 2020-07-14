@@ -20,8 +20,23 @@ class BmiCal extends StatefulWidget {
 }
 
 class _BmiCalState extends State<BmiCal> {
+  List<Widget> container1 = {
+    Container(
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15), color: Colors.white),
+    ),
+  };
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BMI Calculator'),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: container1[0],
+      ),
+    );
   }
 }
