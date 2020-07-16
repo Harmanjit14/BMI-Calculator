@@ -159,6 +159,48 @@ class _MainBoxState extends State<MainBox> {
   }
 }
 
+class WeightBox extends StatefulWidget {
+  @override
+  _WeightBoxState createState() => _WeightBoxState();
+}
+
+class _WeightBoxState extends State<WeightBox> {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 1,
+      child: Container(
+        margin: EdgeInsets.fromLTRB(15, 15, 10, 15),
+        height: 150,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), color: Colors.grey[800]),
+      ),
+    );
+  }
+}
+
+class AgeBox extends StatefulWidget {
+  @override
+  _AgeBoxState createState() => _AgeBoxState();
+}
+
+class _AgeBoxState extends State<AgeBox> {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 1,
+      child: Container(
+        margin: EdgeInsets.fromLTRB(15, 15, 10, 15),
+        height: 150,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), color: Colors.grey[800]),
+      ),
+    );
+  }
+}
+
 class BmiCal extends StatefulWidget {
   @override
   _BmiCalState createState() => _BmiCalState();
@@ -234,10 +276,8 @@ class _BmiCalState extends State<BmiCal> {
             MainBox(),
             Row(
               children: <Widget>[
-                MaleWid(boxCol: inactive),
-                FemaleWid(
-                  boxCol: inactive,
-                ),
+                WeightBox(),
+                AgeBox(),
               ],
             ),
             FlatButton(
