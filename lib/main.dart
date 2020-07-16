@@ -37,9 +37,9 @@ class MaleWid extends StatelessWidget {
             Text(
               'MALE',
               style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 98,
                   //fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                  color: Colors.grey),
             )
           ],
         ),
