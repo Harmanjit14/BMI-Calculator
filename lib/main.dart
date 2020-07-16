@@ -141,7 +141,7 @@ class _MainBoxState extends State<MainBox> {
                 });
               },
               min: 100,
-              max: 300,
+              max: 250,
               activeColor: Colors.teal,
               inactiveColor: Colors.white,
             ),
@@ -197,20 +197,39 @@ class _WeightBoxState extends State<WeightBox> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 5,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(shape: BoxShape.circle),
-                  color: Colors.white,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.add,
-                      color: Colors.red,
-                    ),
+                  width: 50,
+                  height: 50,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.teal[700],
                     onPressed: null,
+                    child: Icon(
+                      Icons.remove,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.teal[700],
+                    onPressed: null,
+                    child: Icon(
+                      Icons.add,
+                      size: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -233,11 +252,72 @@ class AgeBox extends StatefulWidget {
 }
 
 class _AgeBoxState extends State<AgeBox> {
+  int age = 21;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
       child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'AGE',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: <Widget>[
+                Text(
+                  age.toString(),
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 50,
+                  height: 50,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.teal[700],
+                    onPressed: null,
+                    child: Icon(
+                      Icons.remove,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.teal[700],
+                    onPressed: null,
+                    child: Icon(
+                      Icons.add,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
         margin: EdgeInsets.fromLTRB(15, 15, 10, 15),
         height: 150,
         width: double.infinity,
