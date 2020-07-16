@@ -208,7 +208,11 @@ class _WeightBoxState extends State<WeightBox> {
                   height: 50,
                   child: FloatingActionButton(
                     backgroundColor: Colors.teal[700],
-                    onPressed: null,
+                    onPressed: () {
+                      setState(() {
+                        weight--;
+                      });
+                    },
                     child: Icon(
                       Icons.remove,
                       size: 30,
@@ -224,7 +228,11 @@ class _WeightBoxState extends State<WeightBox> {
                   height: 50,
                   child: FloatingActionButton(
                     backgroundColor: Colors.teal[700],
-                    onPressed: null,
+                    onPressed: () {
+                      setState(() {
+                        weight++;
+                      });
+                    },
                     child: Icon(
                       Icons.add,
                       size: 30,
@@ -290,7 +298,11 @@ class _AgeBoxState extends State<AgeBox> {
                   height: 50,
                   child: FloatingActionButton(
                     backgroundColor: Colors.teal[700],
-                    onPressed: null,
+                    onPressed: () {
+                      setState(() {
+                        age--;
+                      });
+                    },
                     child: Icon(
                       Icons.remove,
                       size: 30,
@@ -306,7 +318,11 @@ class _AgeBoxState extends State<AgeBox> {
                   height: 50,
                   child: FloatingActionButton(
                     backgroundColor: Colors.teal[700],
-                    onPressed: null,
+                    onPressed: () {
+                      setState(() {
+                        age++;
+                      });
+                    },
                     child: Icon(
                       Icons.add,
                       size: 30,
