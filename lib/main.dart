@@ -165,11 +165,58 @@ class WeightBox extends StatefulWidget {
 }
 
 class _WeightBoxState extends State<WeightBox> {
+  int weight = 40;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
       child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'WEIGHT',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: <Widget>[
+                Text(
+                  weight.toString(),
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+                ),
+                SizedBox(width: 3),
+                Text(
+                  'kg',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(shape: BoxShape.circle),
+                  color: Colors.white,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: Colors.red,
+                    ),
+                    onPressed: null,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
         margin: EdgeInsets.fromLTRB(15, 15, 10, 15),
         height: 150,
         width: double.infinity,
