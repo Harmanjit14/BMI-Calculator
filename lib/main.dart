@@ -91,11 +91,62 @@ class FemaleWid extends StatelessWidget {
   }
 }
 
-class MainBox extends StatelessWidget {
+class MainBox extends StatefulWidget {
+  @override
+  _MainBoxState createState() => _MainBoxState();
+}
+
+class _MainBoxState extends State<MainBox> {
+  int h = 180;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'HEIGHT',
+              style: TextStyle(fontSize: 18, color: Colors.white),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: <Widget>[
+                Text(
+                  h.toString(),
+                  style: TextStyle(fontSize: 60, fontWeight: FontWeight.w900),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  'cm',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Slider(
+              value: h.toDouble(),
+              onChanged: (double newVal) {
+                setState(() {
+                  h = newVal.toInt();
+                });
+              },
+              min: 100,
+              max: 300,
+              activeColor: Colors.teal,
+              inactiveColor: Colors.white,
+            ),
+          ],
+        ),
         height: double.infinity,
         width: double.infinity,
         margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
