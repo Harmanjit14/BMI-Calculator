@@ -1,5 +1,8 @@
+import 'package:bmi_calculator/screen3.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+//import 'screen2.dart';
+import 'screen3.dart';
 
 void main() {
   runApp(MyApp());
@@ -425,7 +428,16 @@ class _BmiCalState extends State<BmiCal> {
             ),
             FlatButton(
               padding: EdgeInsets.all(0),
-              onPressed: null,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Screen3();
+                    },
+                  ),
+                );
+              },
               child: Expanded(
                 child: Container(
                   margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
