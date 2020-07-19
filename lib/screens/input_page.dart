@@ -20,6 +20,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
+  int gender;
   int height = 180;
   int weight = 60;
   int age = 20;
@@ -40,6 +41,7 @@ class _InputPageState extends State<InputPage> {
                 child: ReusableCard(
                   onPress: () {
                     setState(() {
+                      gender = 1;
                       selectedGender = Gender.male;
                     });
                   },
@@ -56,6 +58,7 @@ class _InputPageState extends State<InputPage> {
                 child: ReusableCard(
                   onPress: () {
                     setState(() {
+                      gender = 0;
                       selectedGender = Gender.female;
                     });
                   },
@@ -220,11 +223,11 @@ class _InputPageState extends State<InputPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ResultsPage(
-                        bmiResult: calc.calculateBMI(),
-                        resultText: calc.getResult(),
-                        interpretation: calc.getInterpretation(),
-                      ),
+                  builder: (context) => ResultsPage(gender: gender,
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(),
+                  ),
                 ),
               );
             },

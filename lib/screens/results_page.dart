@@ -2,16 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ResultsPage extends StatelessWidget {
   ResultsPage(
-      {@required this.interpretation,
+      {@required this.gender,
+      @required this.interpretation,
       @required this.bmiResult,
       @required this.resultText});
 
+  final int gender;
   final String bmiResult;
   final String resultText;
   final String interpretation;
+  List<Icon> genIcon = [
+    Icon(
+      FontAwesomeIcons.female,
+      size: 130,
+      color: Colors.white,
+    ),
+    Icon(
+      FontAwesomeIcons.male,
+      size: 130,
+      color: Colors.white,
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +56,9 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  Container(
+                    child: genIcon[gender],
+                  ),
                   Text(
                     resultText.toUpperCase(),
                     style: kResultTextStyle,
