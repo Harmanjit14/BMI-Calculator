@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/database.dart';
 
 class AgeBox extends StatefulWidget {
   @override
@@ -102,6 +103,7 @@ class WeightBox extends StatefulWidget {
 class _WeightBoxState extends State<WeightBox> {
   Key but2, but1;
   int weight = 40;
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -148,6 +150,7 @@ class _WeightBoxState extends State<WeightBox> {
                     onPressed: () {
                       setState(() {
                         weight--;
+                        UserData obj = UserData.getWeight(weight);
                       });
                     },
                     child: Icon(
@@ -170,6 +173,7 @@ class _WeightBoxState extends State<WeightBox> {
                     onPressed: () {
                       setState(() {
                         weight++;
+                        UserData obj = UserData.getWeight(weight);
                       });
                     },
                     child: Icon(

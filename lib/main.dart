@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/Second/second.dart';
-import 'First/first.dart';
+import 'package:bmi_calculator/screens/input_page.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(BMICalculator());
 
-class MyApp extends StatelessWidget {
+class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BMI CALCULATOR',
-      routes: {
-        '/first': (context) => FirstRoute(),
-        '/second': (context) => SecondRoute()
-      },
-      theme: ThemeData.dark(),
-      initialRoute: '/first',
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF0A0E21),
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
+      ),
+      home: InputPage(),
     );
   }
 }

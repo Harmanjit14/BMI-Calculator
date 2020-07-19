@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/database.dart';
 import 'package:flutter/material.dart';
 
 class SubmitBut extends StatefulWidget {
@@ -13,6 +14,8 @@ class _SubmitButState extends State<SubmitBut> {
       key: main,
       padding: EdgeInsets.all(0),
       onPressed: () {
+        UserData obj;
+        obj.calculate();
         Navigator.pushNamed(context, '/second');
       },
       child: Container(

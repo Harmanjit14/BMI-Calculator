@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmi_calculator/database.dart';
 
 class MainBox extends StatefulWidget {
   @override
@@ -47,6 +48,7 @@ class _MainBoxState extends State<MainBox> {
               value: height.toDouble(),
               onChanged: (double newVal) {
                 setState(() {
+                  UserData obj = UserData.getHeight(newVal.toInt());
                   height = newVal.toInt();
                 });
               },

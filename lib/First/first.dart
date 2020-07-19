@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/database.dart';
 import 'package:flutter/material.dart';
 
 import 'first_MainBox.dart';
@@ -31,6 +32,7 @@ class _ColectorFirstState extends State<ColectorFirst> {
       if (finWidM == inactive) {
         finWidM = active;
         finWidF = inactive;
+        UserData obj = UserData.getGender(1);
       } else {
         finWidM = inactive;
         finWidF = inactive;
@@ -39,6 +41,7 @@ class _ColectorFirstState extends State<ColectorFirst> {
       if (finWidF == inactive) {
         finWidF = active;
         finWidM = inactive;
+        UserData obj = UserData.getGender(0);
       } else {
         finWidF = inactive;
         finWidM = inactive;

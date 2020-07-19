@@ -1,4 +1,6 @@
+import 'package:bmi_calculator/database.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MainBoxSecond extends StatefulWidget {
   @override
@@ -6,11 +8,34 @@ class MainBoxSecond extends StatefulWidget {
 }
 
 class _MainBoxSecondState extends State<MainBoxSecond> {
+  List<Icon> genIcon = [
+    Icon(
+      FontAwesomeIcons.female,
+      color: Colors.white,
+      size: 150,
+    ),
+    Icon(
+      FontAwesomeIcons.male,
+      color: Colors.white,
+      size: 150,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Expanded(
       flex: 9,
       child: Container(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text(
+                'YOUR RESULT',
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         height: double.infinity,
         width: double.infinity,
