@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
+import 'mainBoxSec.dart';
 
 class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Route"),
+      body: SafeArea(
+        child: CollectorSecond(),
       ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: null,
-          child: Text('Go back!'),
-        ),
+    );
+  }
+}
+
+class CollectorSecond extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+      child: Column(
+        children: <Widget>[
+          MainBoxSecond(),
+          ResetButton(),
+        ],
       ),
     );
   }
